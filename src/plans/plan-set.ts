@@ -217,7 +217,7 @@ function chrome(
   <g font-family="Helvetica, Arial, sans-serif">
     <rect x="${W - 380}" y="${H - TITLE_H - 8}" width="${372}" height="${TITLE_H}" fill="#fff" stroke="#222"/>
     <text x="${W - 368}" y="${H - TITLE_H + 12}" font-size="14" font-weight="bold" fill="#111">${esc(clip(title, 44))}</text>
-    <text x="${W - 368}" y="${H - TITLE_H + 27}" font-size="10" fill="#333">${esc(clip(`${opts.projectName ?? 'Pascal project'} — ${opts.levelName ?? 'Level'}`, 66))}</text>
+    <text x="${W - 368}" y="${H - TITLE_H + 27}" font-size="10" fill="#333">${esc(clip(`${opts.projectName ?? 'Project'} — ${opts.levelName ?? 'Level'}`, 66))}</text>
     <text x="${W - 368}" y="${H - TITLE_H + 38}" font-size="8.5" fill="#555">${esc(line1)}</text>
     ${line1b ? `<text x="${W - 368}" y="${H - TITLE_H + 48}" font-size="8.5" fill="#555">${esc(line1b)}</text>` : ''}
     <text x="${W - 368}" y="${H - TITLE_H + 58}" font-size="8.5" fill="#555">${esc(line2)}</text>
@@ -803,7 +803,7 @@ function coverSheet(members: Member[], opts: PlanSetOptions, index: string[]): P
   )
   const f = fitSegs(segs)
   if (!f) return null
-  const title = opts.projectName ?? 'Pascal project'
+  const title = opts.projectName ?? 'Project'
   const lines = [
     `${opts.levelName ?? 'Level'} — full construction set`,
     [opts.jurisdiction, opts.codeName].filter(Boolean).join(' · '),
@@ -942,7 +942,7 @@ export function planSetHtml(sheets: PlanSheet[], opts: PlanSetOptions = {}): str
     .map((s) => `<section class="sheet">${s.svg}</section>`)
     .join('\n')
   return `<!doctype html>
-<html><head><meta charset="utf-8"><title>${esc(opts.projectName ?? 'Pascal')} — Full plans (LOD 400)</title>
+<html><head><meta charset="utf-8"><title>${esc(opts.projectName ?? 'Project')} — Full plans (LOD 400)</title>
 <style>
   @page { size: letter landscape; margin: 0; }
   html, body { margin: 0; padding: 0; background: #6b7078; }

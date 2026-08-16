@@ -66,9 +66,9 @@ export default function BonesPanel() {
     <div className="flex flex-col gap-4 p-4 text-sidebar-foreground">
       <header className="flex flex-col gap-1">
         <div className="flex items-center gap-2">
-          <h2 className="font-semibold text-base">Bones</h2>
+          <h2 className="font-semibold text-base">Structural Framing</h2>
           <span className="rounded-full border border-sidebar-border/60 bg-sidebar-accent px-1.5 py-px font-semibold text-[9px] text-sidebar-foreground/70 uppercase tracking-widest">
-            Alpha
+            Beta
           </span>
         </div>
         <p className="text-sidebar-foreground/50 text-xs leading-relaxed">
@@ -565,7 +565,7 @@ function ExportPlansButton({
       className="flex w-full flex-col items-center gap-0.5 rounded-lg bg-primary px-3 py-2.5 font-semibold text-primary-foreground text-sm shadow-sm transition-transform hover:scale-[1.02] active:scale-[0.99]"
       onClick={() => {
         const sheets = buildPlanSet(result.members, result.fixtures, {
-          projectName: document.title.split('—')[0]?.trim() || 'Pascal project',
+          projectName: document.title.split('—')[0]?.trim() || 'Project',
           levelName,
           // resolved state code — raw 'AUTO' printed on sheets (quality C1)
           jurisdiction: result.jurisdiction,
