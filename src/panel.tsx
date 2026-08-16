@@ -13,6 +13,7 @@ import { guessJurisdiction } from './jurisdiction/guess'
 import { jurisdictionOptions, profileFor } from './jurisdiction/profiles'
 import { LUMBER_CROSS_SECTIONS, LUMBER_SIZES, type LumberSize } from './lumber'
 import { useBonesStore } from './store'
+import { createWallModeTakeover, type WallModeViewer } from './view-takeover'
 
 const LUMBER_KIND: string = 'bones:lumber'
 const FRAMING_KIND: string = 'bones:framing'
@@ -40,6 +41,19 @@ export default function BonesPanel() {
       (n) => (n.type as string) === FRAMING_KIND && n.parentId === activeLevelId,
     ) as (FramingNode & { id: string }) | undefined
   })
+  // While this panel is OPEN with a live X-ray, hide the host's wall shells
+  // so the skeleton reads as the building; restore on leave. Panel-owned on
+  // purpose — see view-takeover.ts for why the renderer must not do this.
+  const takeoverActive = Boolean(framingNode) && framingNode?.seeThrough !== false
+  useEffect(() => {
+    if (!takeoverActive) return
+    const takeover = createWallModeTakeover(
+      () => useViewer.getState() as unknown as WallModeViewer,
+    )
+    takeover.engage()
+    return () => takeover.release()
+  }, [takeoverActive])
+
   // ONE derivation per scene edit, shared by the X-Ray status line and the
   // takeoff — the renderer runs its own (also once). Reviewer advisory r1.
   const nodes = useScene((s) => s.nodes)
