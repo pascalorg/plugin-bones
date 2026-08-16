@@ -5,8 +5,8 @@
  *
  *  1. `Intl.DateTimeFormat().resolvedOptions().timeZone` — IANA zone ids name
  *     actual cities (`America/Denver`, `America/Indiana/Indianapolis`), which
- *     maps to a US state for every US zone.
- *  2. `navigator.language` region subtag — a non-US locale (fr-FR, de-DE…)
+ *     maps to a US state (or Canadian province) for every US/CA zone.
+ *  2. `navigator.language` region subtag — a non-US/CA locale (fr-FR, de-DE…)
  *     falls back to the INTL profile.
  *
  * This is a SUGGESTION rendered in the panel ("guessed from your browser") —
@@ -44,6 +44,38 @@ const TZ_STATE: Record<string, string> = {
   'America/Nome': 'AK',
   'America/Adak': 'AK',
   'Pacific/Honolulu': 'HI',
+
+  // Canada. Ontario is split three ways (the frost line runs 1200mm in the
+  // GTA to 2100mm at Thunder Bay), so the zone picks the region it names.
+  // Caveat: modern tzdata folds Montreal into America/Toronto, so Quebec
+  // users land on southern Ontario and have to pick their province by hand.
+  'America/Toronto': 'CA-ON-S',
+  'America/Nipigon': 'CA-ON-N',
+  'America/Thunder_Bay': 'CA-ON-N',
+  'America/Atikokan': 'CA-ON-N',
+  'America/Rainy_River': 'CA-ON-N',
+  'America/Blanc-Sablon': 'CA-QC',
+  'America/Winnipeg': 'CA-MB',
+  'America/Regina': 'CA-SK',
+  'America/Swift_Current': 'CA-SK',
+  'America/Edmonton': 'CA-AB',
+  'America/Vancouver': 'CA-BC',
+  'America/Dawson_Creek': 'CA-BC',
+  'America/Fort_Nelson': 'CA-BC',
+  'America/Creston': 'CA-BC',
+  'America/Halifax': 'CA-NS',
+  'America/Glace_Bay': 'CA-NS',
+  'America/Moncton': 'CA-NB',
+  'America/St_Johns': 'CA-NL',
+  'America/Goose_Bay': 'CA-NL',
+  'America/Whitehorse': 'CA-YT',
+  'America/Dawson': 'CA-YT',
+  'America/Yellowknife': 'CA-NT',
+  'America/Inuvik': 'CA-NT',
+  'America/Iqaluit': 'CA-NU',
+  'America/Rankin_Inlet': 'CA-NU',
+  'America/Cambridge_Bay': 'CA-NU',
+  'America/Resolute': 'CA-NU',
 }
 
 export type JurisdictionGuess = {
@@ -61,6 +93,9 @@ export function guessJurisdiction(): JurisdictionGuess {
       typeof navigator !== 'undefined' ? (navigator.language ?? navigator.languages?.[0]) : ''
     const region = lang?.split('-')[1]?.toUpperCase()
     if (region === 'US') return { code: 'TX', reason: `US locale (${lang}), unknown state` }
+    if (region === 'CA') {
+      return { code: 'CA-GEN', reason: `Canadian locale (${lang}), unknown province` }
+    }
     if (region) return { code: 'INTL', reason: `non-US locale (${lang})` }
   } catch {
     // SSR or restricted environment — fall through.

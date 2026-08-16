@@ -81,7 +81,7 @@ export function computeLevel(
   return result
 }
 
-function computeLevelUncached(
+export function computeLevelUncached(
   nodes: Record<string, Record<string, unknown>>,
   config: FramingNode,
 ): ComputeResult {

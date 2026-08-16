@@ -1,6 +1,6 @@
 {
-  "version": "2026-08-13",
-  "disclaimer": "Typical state-level values — site-specific design values (IRC Table R301.2(1), filled in by the local jurisdiction) govern; verify with the AHJ. Entries AL through MO + DC were reconstructed on 2026-08-13 after the climate-a research output was lost; see per-entry \"caveat\".",
+  "version": "2026-08-15",
+  "disclaimer": "Typical state-level values — site-specific design values (IRC Table R301.2(1), filled in by the local jurisdiction) govern; verify with the AHJ. Entries AL through MO + DC were reconstructed on 2026-08-13 after the climate-a research output was lost; see per-entry \"caveat\". Canadian provincial and territorial entries (CA-*) were added 2026-08-15 from NBC 2020 Appendix C and Ontario SB-1; see the per-entry \"caveat\".",
   "sources": [
     "https://ascehazardtool.org/",
     "https://hazards.atcouncil.org/",
@@ -14,7 +14,10 @@
     "https://www.wbdg.org/",
     "https://floridabuilding.org/",
     "https://www.dli.mn.gov/business/codes-and-laws",
-    "https://www.mass.gov/orgs/board-of-building-regulations-and-standards"
+    "https://www.mass.gov/orgs/board-of-building-regulations-and-standards",
+    "https://nrc.canada.ca/en/certifications-evaluations-standards/codes-canada/codes-canada-publications/national-building-code-canada-2020",
+    "https://www.seismescanada.rncan.gc.ca/hazard-alea/interpolat/nbc-cnb-en.php",
+    "https://www.ontario.ca/page/building-code-updates"
   ],
   "states": {
     "AL": {
@@ -1011,6 +1014,321 @@
         "hvhz": false,
         "deepFrostFootings": true
       }
+    },
+    "CA-ON-S": {
+      "name": "Canada · Ontario — South (GTA / Golden Horseshoe)",
+      "frostLineIn": 47,
+      "frostLineNote": "OBC 9.12.2.2 + SB-1: 1200 mm (47 in) typical for Toronto, Hamilton and Niagara.",
+      "groundSnowLoadPsf": 23,
+      "snowNote": "SB-1 Toronto Ss = 1.1 kPa, Sr = 0.4 kPa (~23 psf ground snow). Windsor and Niagara slightly lower; the Georgian Bay snowbelt is far higher.",
+      "ultimateWindMph": 110,
+      "windNote": "Hourly wind pressure q(1/50) ~0.44-0.52 kPa; no hurricane or wind-borne-debris regime.",
+      "seismicSdc": "A",
+      "seismicNote": "Sa(0.2) is well below the NBC 9.23.13 prescriptive threshold of 0.70, so prescriptive lateral bracing applies.",
+      "termiteRisk": "slight",
+      "weatheringPotential": "severe",
+      "flags": {
+        "hurricaneTies": false,
+        "seismicHoldDowns": false,
+        "hvhz": false,
+        "deepFrostFootings": true
+      },
+      "caveat": "Canadian entry (added 2026-08-15): typical provincial values derived from NBC 2020 Division B Appendix C, and Ontario MMAH Supplementary Standard SB-1 for the Ontario rows. Site-specific values from the authority having jurisdiction govern."
+    },
+    "CA-ON-E": {
+      "name": "Canada · Ontario — East (Ottawa Valley / Kingston)",
+      "frostLineIn": 71,
+      "frostLineNote": "SB-1: 1800 mm (71 in) for Ottawa and much of eastern Ontario.",
+      "groundSnowLoadPsf": 52,
+      "snowNote": "SB-1 Ottawa Ss = 2.5 kPa, Sr = 0.4 kPa (~52 psf) — more than double the GTA.",
+      "ultimateWindMph": 110,
+      "windNote": "Comparable to southern Ontario; no coastal regime.",
+      "seismicSdc": "C",
+      "seismicNote": "The western Quebec / Ottawa Valley zone is the second-highest seismic hazard in Canada; Sa(0.2) approaches the NBC 9.23.13 prescriptive threshold and engineered lateral design may be required.",
+      "termiteRisk": "slight",
+      "weatheringPotential": "severe",
+      "flags": {
+        "hurricaneTies": false,
+        "seismicHoldDowns": false,
+        "hvhz": false,
+        "deepFrostFootings": true
+      },
+      "caveat": "Canadian entry (added 2026-08-15): typical provincial values derived from NBC 2020 Division B Appendix C, and Ontario MMAH Supplementary Standard SB-1 for the Ontario rows. Site-specific values from the authority having jurisdiction govern."
+    },
+    "CA-ON-N": {
+      "name": "Canada · Ontario — North (Sudbury / Thunder Bay)",
+      "frostLineIn": 83,
+      "frostLineNote": "SB-1: 1800 mm (71 in) at Sudbury, up to 2100 mm (83 in) at Thunder Bay and further north.",
+      "groundSnowLoadPsf": 60,
+      "snowNote": "Ss typically 2.5-3.5 kPa (~52-73 psf); lake-effect belts higher.",
+      "ultimateWindMph": 110,
+      "seismicSdc": "A",
+      "seismicNote": "Low hazard across the Canadian Shield.",
+      "termiteRisk": "slight",
+      "weatheringPotential": "severe",
+      "flags": {
+        "hurricaneTies": false,
+        "seismicHoldDowns": false,
+        "hvhz": false,
+        "deepFrostFootings": true
+      },
+      "caveat": "Canadian entry (added 2026-08-15): typical provincial values derived from NBC 2020 Division B Appendix C, and Ontario MMAH Supplementary Standard SB-1 for the Ontario rows. Site-specific values from the authority having jurisdiction govern."
+    },
+    "CA-BC": {
+      "name": "Canada · British Columbia",
+      "frostLineIn": 18,
+      "frostLineNote": "Lower Mainland and Vancouver Island ~450 mm (18 in) in a mild marine climate. The Interior (Kamloops, Prince George) runs 1200-1800 mm — override for interior sites.",
+      "groundSnowLoadPsf": 35,
+      "snowNote": "Coastal Ss ~1.5-2.0 kPa (~31-42 psf); interior and mountain sites far higher.",
+      "ultimateWindMph": 115,
+      "windNote": "Exposed coastal sites higher; no hurricane regime.",
+      "seismicSdc": "D",
+      "seismicNote": "Cascadia subduction zone — the highest seismic hazard in Canada. Coastal BC exceeds the NBC 9.23.13 prescriptive bracing threshold, so Part 4 engineered lateral design is normal practice.",
+      "termiteRisk": "moderate to heavy",
+      "weatheringPotential": "moderate",
+      "flags": {
+        "hurricaneTies": false,
+        "seismicHoldDowns": true,
+        "hvhz": false,
+        "deepFrostFootings": false
+      },
+      "caveat": "Canadian entry (added 2026-08-15): typical provincial values derived from NBC 2020 Division B Appendix C, and Ontario MMAH Supplementary Standard SB-1 for the Ontario rows. Site-specific values from the authority having jurisdiction govern. BC also enforces the BC Energy Step Code, which commonly drives thicker or double-stud exterior walls than this profile assumes."
+    },
+    "CA-AB": {
+      "name": "Canada · Alberta",
+      "frostLineIn": 72,
+      "frostLineNote": "Typically 1500-2400 mm (59-94 in); the Calgary-Edmonton corridor commonly ~1800 mm (71 in).",
+      "groundSnowLoadPsf": 27,
+      "snowNote": "Ss ~1.1-1.6 kPa (~23-33 psf) for the Calgary-Edmonton corridor; foothills and mountain parks much higher.",
+      "ultimateWindMph": 115,
+      "windNote": "The chinook belt and foothills see high gusts.",
+      "seismicSdc": "A",
+      "seismicNote": "Low hazard; the southwestern foothills are moderate.",
+      "termiteRisk": "none to slight",
+      "weatheringPotential": "severe",
+      "flags": {
+        "hurricaneTies": false,
+        "seismicHoldDowns": false,
+        "hvhz": false,
+        "deepFrostFootings": true
+      },
+      "caveat": "Canadian entry (added 2026-08-15): typical provincial values derived from NBC 2020 Division B Appendix C, and Ontario MMAH Supplementary Standard SB-1 for the Ontario rows. Site-specific values from the authority having jurisdiction govern."
+    },
+    "CA-SK": {
+      "name": "Canada · Saskatchewan",
+      "frostLineIn": 84,
+      "frostLineNote": "Prairie frost penetration 1800-2400 mm (71-94 in) — deeper than any US state tabulates. Regina and Saskatoon commonly 2100 mm (83 in).",
+      "groundSnowLoadPsf": 31,
+      "snowNote": "Ss ~1.4-1.6 kPa (~29-33 psf); dry cold with moderate accumulation.",
+      "ultimateWindMph": 115,
+      "windNote": "Sustained open-prairie exposure.",
+      "seismicSdc": "A",
+      "seismicNote": "Among the lowest seismic hazards in North America.",
+      "termiteRisk": "none to slight",
+      "weatheringPotential": "severe",
+      "flags": {
+        "hurricaneTies": false,
+        "seismicHoldDowns": false,
+        "hvhz": false,
+        "deepFrostFootings": true
+      },
+      "caveat": "Canadian entry (added 2026-08-15): typical provincial values derived from NBC 2020 Division B Appendix C, and Ontario MMAH Supplementary Standard SB-1 for the Ontario rows. Site-specific values from the authority having jurisdiction govern."
+    },
+    "CA-MB": {
+      "name": "Canada · Manitoba",
+      "frostLineIn": 78,
+      "frostLineNote": "Prairie frost penetration 1800-2400 mm (71-94 in); Winnipeg commonly ~2000 mm (78 in).",
+      "groundSnowLoadPsf": 42,
+      "snowNote": "Ss ~1.9-2.2 kPa (~40-46 psf) for Winnipeg and the Red River Valley.",
+      "ultimateWindMph": 115,
+      "windNote": "Sustained open-prairie exposure.",
+      "seismicSdc": "A",
+      "seismicNote": "Very low hazard.",
+      "termiteRisk": "none to slight",
+      "weatheringPotential": "severe",
+      "flags": {
+        "hurricaneTies": false,
+        "seismicHoldDowns": false,
+        "hvhz": false,
+        "deepFrostFootings": true
+      },
+      "caveat": "Canadian entry (added 2026-08-15): typical provincial values derived from NBC 2020 Division B Appendix C, and Ontario MMAH Supplementary Standard SB-1 for the Ontario rows. Site-specific values from the authority having jurisdiction govern."
+    },
+    "CA-QC": {
+      "name": "Canada · Quebec",
+      "frostLineIn": 59,
+      "frostLineNote": "Montreal ~1500 mm (59 in); Quebec City and north 1500-2000 mm.",
+      "groundSnowLoadPsf": 54,
+      "snowNote": "Montreal Ss ~2.6 kPa (~54 psf); Quebec City and the north 3.0-4.5 kPa.",
+      "ultimateWindMph": 110,
+      "seismicSdc": "C",
+      "seismicNote": "Charlevoix and western Quebec are elevated-hazard zones; Montreal is moderate.",
+      "termiteRisk": "slight",
+      "weatheringPotential": "severe",
+      "flags": {
+        "hurricaneTies": false,
+        "seismicHoldDowns": false,
+        "hvhz": false,
+        "deepFrostFootings": true
+      },
+      "caveat": "Canadian entry (added 2026-08-15): typical provincial values derived from NBC 2020 Division B Appendix C, and Ontario MMAH Supplementary Standard SB-1 for the Ontario rows. Site-specific values from the authority having jurisdiction govern."
+    },
+    "CA-NB": {
+      "name": "Canada · New Brunswick",
+      "frostLineIn": 55,
+      "frostLineNote": "Typically 1200-1500 mm (47-59 in).",
+      "groundSnowLoadPsf": 60,
+      "snowNote": "Ss ~2.5-3.5 kPa (~52-73 psf).",
+      "ultimateWindMph": 120,
+      "windNote": "Post-tropical storm exposure inland of the Bay of Fundy.",
+      "seismicSdc": "B",
+      "seismicNote": "Low to moderate.",
+      "termiteRisk": "slight",
+      "weatheringPotential": "severe",
+      "flags": {
+        "hurricaneTies": false,
+        "seismicHoldDowns": false,
+        "hvhz": false,
+        "deepFrostFootings": true
+      },
+      "caveat": "Canadian entry (added 2026-08-15): typical provincial values derived from NBC 2020 Division B Appendix C, and Ontario MMAH Supplementary Standard SB-1 for the Ontario rows. Site-specific values from the authority having jurisdiction govern."
+    },
+    "CA-NS": {
+      "name": "Canada · Nova Scotia",
+      "frostLineIn": 47,
+      "frostLineNote": "Typically ~1200 mm (47 in); milder maritime ground temperatures.",
+      "groundSnowLoadPsf": 52,
+      "snowNote": "Ss ~2.0-3.0 kPa (~42-63 psf).",
+      "ultimateWindMph": 130,
+      "windNote": "Atlantic post-tropical systems (Juan 2003, Fiona 2022) drive roof-uplift detailing.",
+      "seismicSdc": "A",
+      "seismicNote": "Low hazard.",
+      "termiteRisk": "slight",
+      "weatheringPotential": "severe",
+      "flags": {
+        "hurricaneTies": true,
+        "seismicHoldDowns": false,
+        "hvhz": false,
+        "deepFrostFootings": true
+      },
+      "caveat": "Canadian entry (added 2026-08-15): typical provincial values derived from NBC 2020 Division B Appendix C, and Ontario MMAH Supplementary Standard SB-1 for the Ontario rows. Site-specific values from the authority having jurisdiction govern."
+    },
+    "CA-PE": {
+      "name": "Canada · Prince Edward Island",
+      "frostLineIn": 47,
+      "frostLineNote": "Typically ~1200 mm (47 in).",
+      "groundSnowLoadPsf": 52,
+      "snowNote": "Ss ~2.5 kPa (~52 psf).",
+      "ultimateWindMph": 130,
+      "windNote": "Among the highest sustained wind exposures in Atlantic Canada.",
+      "seismicSdc": "A",
+      "seismicNote": "Low hazard.",
+      "termiteRisk": "slight",
+      "weatheringPotential": "severe",
+      "flags": {
+        "hurricaneTies": true,
+        "seismicHoldDowns": false,
+        "hvhz": false,
+        "deepFrostFootings": true
+      },
+      "caveat": "Canadian entry (added 2026-08-15): typical provincial values derived from NBC 2020 Division B Appendix C, and Ontario MMAH Supplementary Standard SB-1 for the Ontario rows. Site-specific values from the authority having jurisdiction govern."
+    },
+    "CA-NL": {
+      "name": "Canada · Newfoundland and Labrador",
+      "frostLineIn": 59,
+      "frostLineNote": "Island 1200-1500 mm; Labrador far deeper, with permafrost in the far north.",
+      "groundSnowLoadPsf": 73,
+      "snowNote": "Ss ~2.5-4.5 kPa (~52-94 psf) — among the highest in Canada.",
+      "ultimateWindMph": 140,
+      "windNote": "Extreme North Atlantic wind exposure.",
+      "seismicSdc": "A",
+      "seismicNote": "Low hazard.",
+      "termiteRisk": "none to slight",
+      "weatheringPotential": "severe",
+      "flags": {
+        "hurricaneTies": true,
+        "seismicHoldDowns": false,
+        "hvhz": false,
+        "deepFrostFootings": true
+      },
+      "caveat": "Canadian entry (added 2026-08-15): typical provincial values derived from NBC 2020 Division B Appendix C, and Ontario MMAH Supplementary Standard SB-1 for the Ontario rows. Site-specific values from the authority having jurisdiction govern."
+    },
+    "CA-YT": {
+      "name": "Canada · Yukon",
+      "frostLineIn": 96,
+      "frostLineNote": "Discontinuous permafrost; conventional frost-depth footings are often inappropriate. PERMAFROST: a spread-footing depth is not a meaningful output here — piles, adfreeze piles or insulated space-frame foundations are the norm. Design the foundation explicitly.",
+      "groundSnowLoadPsf": 42,
+      "snowNote": "Ss ~1.0-2.5 kPa (~21-52 psf).",
+      "ultimateWindMph": 110,
+      "seismicSdc": "C",
+      "seismicNote": "Southwestern Yukon is a moderate-to-high hazard zone.",
+      "termiteRisk": "none",
+      "weatheringPotential": "severe",
+      "flags": {
+        "hurricaneTies": false,
+        "seismicHoldDowns": false,
+        "hvhz": false,
+        "deepFrostFootings": true
+      },
+      "caveat": "Canadian entry (added 2026-08-15): typical provincial values derived from NBC 2020 Division B Appendix C, and Ontario MMAH Supplementary Standard SB-1 for the Ontario rows. Site-specific values from the authority having jurisdiction govern. PERMAFROST: spread-footing depth is not a meaningful output here — piles, adfreeze piles or insulated space-frame foundations are the norm. Design the foundation explicitly."
+    },
+    "CA-NT": {
+      "name": "Canada · Northwest Territories",
+      "frostLineIn": 96,
+      "frostLineNote": "Continuous and discontinuous permafrost. PERMAFROST: a spread-footing depth is not a meaningful output here — piles, adfreeze piles or insulated space-frame foundations are the norm. Design the foundation explicitly.",
+      "groundSnowLoadPsf": 52,
+      "snowNote": "Ss ~1.5-3.0 kPa (~31-63 psf).",
+      "ultimateWindMph": 115,
+      "seismicSdc": "A",
+      "seismicNote": "Low hazard.",
+      "termiteRisk": "none",
+      "weatheringPotential": "severe",
+      "flags": {
+        "hurricaneTies": false,
+        "seismicHoldDowns": false,
+        "hvhz": false,
+        "deepFrostFootings": true
+      },
+      "caveat": "Canadian entry (added 2026-08-15): typical provincial values derived from NBC 2020 Division B Appendix C, and Ontario MMAH Supplementary Standard SB-1 for the Ontario rows. Site-specific values from the authority having jurisdiction govern. PERMAFROST: spread-footing depth is not a meaningful output here — piles, adfreeze piles or insulated space-frame foundations are the norm. Design the foundation explicitly."
+    },
+    "CA-NU": {
+      "name": "Canada · Nunavut",
+      "frostLineIn": 96,
+      "frostLineNote": "Continuous permafrost. PERMAFROST: a spread-footing depth is not a meaningful output here — piles, adfreeze piles or insulated space-frame foundations are the norm. Design the foundation explicitly.",
+      "groundSnowLoadPsf": 63,
+      "snowNote": "Ss ~1.5-3.5 kPa (~31-73 psf) with extreme drifting.",
+      "ultimateWindMph": 140,
+      "windNote": "Extreme Arctic wind exposure.",
+      "seismicSdc": "A",
+      "seismicNote": "Low hazard.",
+      "termiteRisk": "none",
+      "weatheringPotential": "severe",
+      "flags": {
+        "hurricaneTies": false,
+        "seismicHoldDowns": false,
+        "hvhz": false,
+        "deepFrostFootings": true
+      },
+      "caveat": "Canadian entry (added 2026-08-15): typical provincial values derived from NBC 2020 Division B Appendix C, and Ontario MMAH Supplementary Standard SB-1 for the Ontario rows. Site-specific values from the authority having jurisdiction govern. PERMAFROST: spread-footing depth is not a meaningful output here — piles, adfreeze piles or insulated space-frame foundations are the norm. Design the foundation explicitly."
+    },
+    "CA-GEN": {
+      "name": "Canada · Generic (NBC 2020)",
+      "frostLineIn": 48,
+      "frostLineNote": "Conservative national placeholder. Canadian frost depths run from ~450 mm on the BC coast to 2400 mm on the Prairies — pick a province for a usable value.",
+      "groundSnowLoadPsf": 40,
+      "snowNote": "Conservative national placeholder; Ss varies roughly 1.0-4.5 kPa across Canada.",
+      "ultimateWindMph": 115,
+      "seismicSdc": "B",
+      "seismicNote": "Generic. Coastal BC is far higher; the Prairies far lower.",
+      "termiteRisk": "slight",
+      "weatheringPotential": "severe",
+      "flags": {
+        "hurricaneTies": false,
+        "seismicHoldDowns": false,
+        "hvhz": false,
+        "deepFrostFootings": true
+      },
+      "caveat": "Canadian entry (added 2026-08-15): typical provincial values derived from NBC 2020 Division B Appendix C, and Ontario MMAH Supplementary Standard SB-1 for the Ontario rows. Site-specific values from the authority having jurisdiction govern. This is the fallback for a Canadian locale with an unknown province — always pick a province where it is known."
     }
   }
 }

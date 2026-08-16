@@ -52,3 +52,28 @@ export const bonesHostPanel: PluginHostPanel = {
 export { lumberDefinition } from './definition'
 export { LumberNode } from './schema'
 export { LUMBER_CROSS_SECTIONS, LUMBER_SIZES, lumberBoxDims } from './lumber'
+
+// Headless engine surface. The derivation pipeline is pure (no React, no
+// three, no stores) — a host estimator can compute the same members and
+// quantities the panel shows, per level, without mounting anything.
+// `computeLevelUncached` exists so a multi-level rollup loop doesn't thrash
+// the 1-deep render memo that the panel and 3D renderer share.
+export {
+  computeLevel,
+  computeLevelUncached,
+  type ComputeResult,
+  wallConstruction,
+} from './framing/compute'
+export { FramingNode } from './framing/schema'
+export {
+  computeTakeoff,
+  cutList,
+  cutListCsv,
+  takeoffCsv,
+  type CutRow,
+  type TakeoffAreas,
+  type TakeoffRow,
+} from './engines/takeoff'
+export { extractRoofs } from './engines/roof-framing'
+export { extractLevels, type LevelSlice } from './core/wall-model'
+export type { BonesSystem, Fixture, FixtureKind, Member, MemberRole } from './core/types'

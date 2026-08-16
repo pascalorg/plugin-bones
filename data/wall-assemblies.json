@@ -210,9 +210,13 @@
       "OH": "vinyl", "OK": "brickVeneer", "OR": "fiberCement", "PA": "vinyl", "RI": "vinyl",
       "SC": "fiberCement", "SD": "vinyl", "TN": "brickVeneer", "TX": "brickVeneer", "UT": "stucco",
       "VA": "fiberCement", "VT": "vinyl", "WA": "fiberCement", "WI": "vinyl", "WV": "vinyl",
-      "WY": "vinyl"
+      "WY": "vinyl",
+      "CA-ON-S": "brickVeneer", "CA-ON-E": "brickVeneer", "CA-ON-N": "vinyl", "CA-BC": "fiberCement",
+      "CA-AB": "vinyl", "CA-SK": "vinyl", "CA-MB": "vinyl", "CA-QC": "brickVeneer", "CA-NB": "vinyl",
+      "CA-NS": "vinyl", "CA-PE": "vinyl", "CA-NL": "vinyl", "CA-YT": "vinyl", "CA-NT": "vinyl",
+      "CA-NU": "vinyl", "CA-GEN": "vinyl"
     },
-    "defaultCladdingCitation": "Regional defaults keyed to 2021 IRC R703.6/.8/.10/.11 + data/jurisdictions-climate.json (termiteRisk, weatheringPotential, flags) and jurisdictions-adoption.json; FL default is stucco-on-CMU variant",
+    "defaultCladdingCitation": "Regional defaults keyed to 2021 IRC R703.6/.8/.10/.11 + data/jurisdictions-climate.json (termiteRisk, weatheringPotential, flags) and jurisdictions-adoption.json; FL default is stucco-on-CMU variant. Canadian entries (CA-*) reflect dominant provincial single-family practice — brick veneer is common on Ontario and Quebec street elevations, vinyl elsewhere.",
     "insulationByClimateZone": {
       "1": { "value": "R13", "compliance2021": ["R-13 cavity", "R-0 + R-10ci"], "compliance2018": ["R-13 cavity"], "studDepthIn": 3.5, "battThicknessIn": 3.5, "citation": "2021 IECC Table R402.1.3 / IRC N1102.1.3 (2018: Table R402.1.2)" },
       "2": { "value": "R13", "compliance2021": ["R-13 cavity", "R-0 + R-10ci"], "compliance2018": ["R-13 cavity"], "studDepthIn": 3.5, "battThicknessIn": 3.5, "citation": "2021 IECC Table R402.1.3 / IRC N1102.1.3" },
@@ -262,9 +266,13 @@
       "ND": "6A-7", "OH": "5A (4A south)", "OK": "3A (4B panhandle)", "OR": "4C west (5B east)",
       "PA": "5A (4A SE)", "RI": "5A", "SC": "3A (2A coast)", "SD": "5A-6A", "TN": "4A (3A west)",
       "TX": "2A-3A (3B/4B west)", "UT": "5B (3B St. George)", "VT": "6A", "VA": "4A",
-      "WA": "4C west (5B east)", "WV": "4A-5A", "WI": "6A (5A south)", "WY": "6B (7 mtn)"
+      "WA": "4C west (5B east)", "WV": "4A-5A", "WI": "6A (5A south)", "WY": "6B (7 mtn)",
+      "CA-ON-S": "5A", "CA-ON-E": "6A", "CA-ON-N": "7 (6A Sudbury)", "CA-BC": "4C (5B-6B interior)",
+      "CA-AB": "7 (6B south)", "CA-SK": "7", "CA-MB": "7 (6A south)", "CA-QC": "6A (7 north)",
+      "CA-NB": "6A", "CA-NS": "6A", "CA-PE": "6A", "CA-NL": "6A (7 Labrador)",
+      "CA-YT": "7 (8 north)", "CA-NT": "8", "CA-NU": "8", "CA-GEN": "6A"
     },
-    "stateClimateZoneCitation": "2021 IECC Figure R301.1 / county tables — dominant residential zone per state; split states (parenthesized) need a 'zone varies by county — confirm with AHJ' warning. jurisdictions-climate.json lacks an ieccZone field; overlay generator writes ieccZone + ieccZoneRange from this map.",
+    "stateClimateZoneCitation": "2021 IECC Figure R301.1 / county tables — dominant residential zone per state; split states (parenthesized) need a 'zone varies by county — confirm with AHJ' warning. jurisdictions-climate.json lacks an ieccZone field; overlay generator writes ieccZone + ieccZoneRange from this map. Canadian entries (CA-*) map each province to its closest ASHRAE/IECC-equivalent zone: Canada uses NBC/NECB heating-degree-day data rather than IECC zones, so these are approximate and exist so the shared insulation/vapour-retarder tables resolve. Note NBC 9.25 requires a vapour barrier on the warm side throughout Canada, which is stricter than the IECC vapor-retarder class implied by these zones.",
     "overlays": {
       "hvhz": {
         "trigger": "flags.hvhz === true (jurisdictions-climate.json)",
