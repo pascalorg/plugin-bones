@@ -1,6 +1,6 @@
 {
-  "version": "2026-08-13",
-  "disclaimer": "Drafting aid, not engineering. Typical/approximate values — verify with the local authority having jurisdiction.",
+  "version": "2026-08-15",
+  "disclaimer": "Drafting aid, not engineering. Typical/approximate values — verify with the local authority having jurisdiction. Canadian entries (CA-*) describe National Building Code of Canada adoption, not IRC adoption; ircBase is null for all of them.",
   "sources": [
     "https://up.codes/viewer/alabama/irc-2015",
     "https://up.codes/codes/alabama",
@@ -67,7 +67,11 @@
     "https://up.codes/codes/washington",
     "https://up.codes/viewer/west_virginia/irc-2018",
     "https://up.codes/codes/wisconsin",
-    "https://up.codes/codes/wyoming"
+    "https://up.codes/codes/wyoming",
+    "https://www.ontario.ca/page/building-code-updates",
+    "https://www.saskatchewan.ca/business/housing-development-construction-and-property-management/building-and-technical-standards",
+    "https://www.gov.mb.ca/labour/its/bldg_codes/2020_construction_codes_adoption.html",
+    "https://dhicanada.ca/codes/provincial-codes-matrix"
   ],
   "states": {
     "AL": {
@@ -650,6 +654,199 @@
         "High snow loads and frost depths in mountain jurisdictions"
       ],
       "note": "ircBase 2018 is representative; many rural counties have no residential code."
+    },
+    "CA-ON-S": {
+      "name": "Canada · Ontario — South (GTA / Golden Horseshoe)",
+      "residentialCode": "2024 Ontario Building Code (O. Reg. 163/24), adopting NBC 2020 plus the Ontario Amendments — effective 2025-01-01",
+      "ircBase": null,
+      "adoptionLevel": "province",
+      "amendmentFlavor": "Ontario adopts NBC 2020 by reference plus a published amendment document; the 2024 harmonization removed roughly 1,730 technical variations from the national codes. Part 9 wood framing is largely unamended.",
+      "specialRegimes": [
+        "NBC Division B Part 9 — Housing and Small Buildings (buildings up to 3 storeys and 600 m2)",
+        "MMAH Supplementary Standard SB-1 (climatic and seismic data by municipality) — governs snow load and frost depth, not NBC Appendix C",
+        "MMAH Supplementary Standard SB-7 (joist, rafter, beam and lintel span tables, by species group)"
+      ],
+      "note": "NOT an IRC adoption. Framing rules come from NBC Division B Part 9 (9.23 Wood-Frame Construction); inference engines must not assume IRC section numbers or IRC braced-wall-panel methods here. NBC 9.23.13 selects lateral bracing from Sa(0.2) and hourly wind pressure rather than braced-wall lines."
+    },
+    "CA-ON-E": {
+      "name": "Canada · Ontario — East (Ottawa Valley / Kingston)",
+      "residentialCode": "2024 Ontario Building Code (O. Reg. 163/24), adopting NBC 2020 plus the Ontario Amendments — effective 2025-01-01",
+      "ircBase": null,
+      "adoptionLevel": "province",
+      "amendmentFlavor": "Same code as the rest of Ontario; this entry differs only in climatic and seismic data (SB-1) for the Ottawa Valley.",
+      "specialRegimes": [
+        "NBC Division B Part 9 — Housing and Small Buildings (buildings up to 3 storeys and 600 m2)",
+        "MMAH Supplementary Standard SB-1 (climatic and seismic data by municipality)",
+        "MMAH Supplementary Standard SB-7 (span tables)"
+      ],
+      "note": "NOT an IRC adoption. Framing rules come from NBC Division B Part 9 (9.23 Wood-Frame Construction); inference engines must not assume IRC section numbers or IRC braced-wall-panel methods here. NBC 9.23.13 selects lateral bracing from Sa(0.2) and hourly wind pressure rather than braced-wall lines."
+    },
+    "CA-ON-N": {
+      "name": "Canada · Ontario — North (Sudbury / Thunder Bay)",
+      "residentialCode": "2024 Ontario Building Code (O. Reg. 163/24), adopting NBC 2020 plus the Ontario Amendments — effective 2025-01-01",
+      "ircBase": null,
+      "adoptionLevel": "province",
+      "amendmentFlavor": "Same code as the rest of Ontario; this entry differs only in climatic data (SB-1) for northern Ontario.",
+      "specialRegimes": [
+        "NBC Division B Part 9 — Housing and Small Buildings (buildings up to 3 storeys and 600 m2)",
+        "MMAH Supplementary Standard SB-1 (climatic and seismic data by municipality)",
+        "MMAH Supplementary Standard SB-7 (span tables)"
+      ],
+      "note": "NOT an IRC adoption. Framing rules come from NBC Division B Part 9 (9.23 Wood-Frame Construction); inference engines must not assume IRC section numbers or IRC braced-wall-panel methods here. NBC 9.23.13 selects lateral bracing from Sa(0.2) and hourly wind pressure rather than braced-wall lines."
+    },
+    "CA-BC": {
+      "name": "Canada · British Columbia",
+      "residentialCode": "BC Building Code 2024 (NBC 2020 base), in force 2024",
+      "ircBase": null,
+      "adoptionLevel": "province",
+      "amendmentFlavor": "BC publishes its own code book on the NBC base, with substantial provincial amendments. Vancouver enforces its own separate Vancouver Building By-law.",
+      "specialRegimes": [
+        "NBC Division B Part 9 — Housing and Small Buildings (buildings up to 3 storeys and 600 m2)",
+        "BC Energy Step Code — mandatory performance tiers that commonly drive thicker or double-stud exterior walls",
+        "High seismic: coastal BC exceeds the NBC 9.23.13 prescriptive bracing threshold, requiring Part 4 engineered lateral design"
+      ],
+      "note": "NOT an IRC adoption. Framing rules come from NBC Division B Part 9 (9.23 Wood-Frame Construction); inference engines must not assume IRC section numbers or IRC braced-wall-panel methods here. NBC 9.23.13 selects lateral bracing from Sa(0.2) and hourly wind pressure rather than braced-wall lines."
+    },
+    "CA-AB": {
+      "name": "Canada · Alberta",
+      "residentialCode": "Alberta Building Code 2023 (NBC 2020 base), in force 2023",
+      "ircBase": null,
+      "adoptionLevel": "province",
+      "amendmentFlavor": "Alberta publishes its own code book on the NBC base with modest provincial amendments; Part 9 framing is close to the national text.",
+      "specialRegimes": [
+        "NBC Division B Part 9 — Housing and Small Buildings (buildings up to 3 storeys and 600 m2)"
+      ],
+      "note": "NOT an IRC adoption. Framing rules come from NBC Division B Part 9 (9.23 Wood-Frame Construction); inference engines must not assume IRC section numbers or IRC braced-wall-panel methods here. NBC 9.23.13 selects lateral bracing from Sa(0.2) and hourly wind pressure rather than braced-wall lines."
+    },
+    "CA-SK": {
+      "name": "Canada · Saskatchewan",
+      "residentialCode": "National Building Code of Canada 2020 (Division B Part 9), adopted 2024-01-01",
+      "ircBase": null,
+      "adoptionLevel": "province",
+      "amendmentFlavor": "Direct adoption under The Construction Codes Act; Saskatchewan skipped NBC 2015 entirely, moving from NBC 2010 to NBC 2020. Among the closest jurisdictions to the unmodified national code.",
+      "specialRegimes": [
+        "NBC Division B Part 9 — Housing and Small Buildings (buildings up to 3 storeys and 600 m2)"
+      ],
+      "note": "NOT an IRC adoption. Framing rules come from NBC Division B Part 9 (9.23 Wood-Frame Construction); inference engines must not assume IRC section numbers or IRC braced-wall-panel methods here. NBC 9.23.13 selects lateral bracing from Sa(0.2) and hourly wind pressure rather than braced-wall lines."
+    },
+    "CA-MB": {
+      "name": "Canada · Manitoba",
+      "residentialCode": "Manitoba Building Code (M.R. 78/2023), adopting NBC 2020 — effective 2024-01-01",
+      "ircBase": null,
+      "adoptionLevel": "province",
+      "amendmentFlavor": "NBC 2020 with Manitoba amendments, which the province has been actively reducing under its Canadian Free Trade Agreement commitments. Manitoba also skipped NBC 2015.",
+      "specialRegimes": [
+        "NBC Division B Part 9 — Housing and Small Buildings (buildings up to 3 storeys and 600 m2)"
+      ],
+      "note": "NOT an IRC adoption. Framing rules come from NBC Division B Part 9 (9.23 Wood-Frame Construction); inference engines must not assume IRC section numbers or IRC braced-wall-panel methods here. NBC 9.23.13 selects lateral bracing from Sa(0.2) and hourly wind pressure rather than braced-wall lines."
+    },
+    "CA-QC": {
+      "name": "Canada · Quebec",
+      "residentialCode": "Construction Code, Chapter I – Building (NBC 2015 base), in force since 2022",
+      "ircBase": null,
+      "adoptionLevel": "province",
+      "amendmentFlavor": "Quebec is one full code cycle behind the rest of Canada: the Construction Code still sits on the NBC 2015 base, with Regie du batiment du Quebec (RBQ) amendments. Official code text is French.",
+      "specialRegimes": [
+        "NBC Division B Part 9 — Housing and Small Buildings (buildings up to 3 storeys and 600 m2)",
+        "RBQ provincial amendments",
+        "Novoclimat energy program (voluntary)"
+      ],
+      "note": "NOT an IRC adoption. Framing rules come from NBC Division B Part 9 (9.23 Wood-Frame Construction); inference engines must not assume IRC section numbers or IRC braced-wall-panel methods here. NBC 9.23.13 selects lateral bracing from Sa(0.2) and hourly wind pressure rather than braced-wall lines. Quebec is on the NBC 2015 base, not NBC 2020 — verify clause numbering before citing."
+    },
+    "CA-NB": {
+      "name": "Canada · New Brunswick",
+      "residentialCode": "National Building Code of Canada 2020 (Division B Part 9), adopted the 2020 code cycle",
+      "ircBase": null,
+      "adoptionLevel": "province",
+      "amendmentFlavor": "Direct adoption of the national model code with minimal provincial amendment; municipalities enforce.",
+      "specialRegimes": [
+        "NBC Division B Part 9 — Housing and Small Buildings (buildings up to 3 storeys and 600 m2)"
+      ],
+      "note": "NOT an IRC adoption. Framing rules come from NBC Division B Part 9 (9.23 Wood-Frame Construction); inference engines must not assume IRC section numbers or IRC braced-wall-panel methods here. NBC 9.23.13 selects lateral bracing from Sa(0.2) and hourly wind pressure rather than braced-wall lines."
+    },
+    "CA-NS": {
+      "name": "Canada · Nova Scotia",
+      "residentialCode": "National Building Code of Canada 2020 (Division B Part 9), adopted the 2020 code cycle",
+      "ircBase": null,
+      "adoptionLevel": "province",
+      "amendmentFlavor": "Direct adoption of the national model code with minimal provincial amendment; municipalities enforce.",
+      "specialRegimes": [
+        "NBC Division B Part 9 — Housing and Small Buildings (buildings up to 3 storeys and 600 m2)",
+        "Elevated Atlantic wind exposure — post-tropical systems drive roof-uplift connection detailing"
+      ],
+      "note": "NOT an IRC adoption. Framing rules come from NBC Division B Part 9 (9.23 Wood-Frame Construction); inference engines must not assume IRC section numbers or IRC braced-wall-panel methods here. NBC 9.23.13 selects lateral bracing from Sa(0.2) and hourly wind pressure rather than braced-wall lines."
+    },
+    "CA-PE": {
+      "name": "Canada · Prince Edward Island",
+      "residentialCode": "National Building Code of Canada 2020 (Division B Part 9), adopted the 2020 code cycle",
+      "ircBase": null,
+      "adoptionLevel": "province",
+      "amendmentFlavor": "Direct adoption of the national model code; permit administration and enforcement are municipal and are not uniform province-wide.",
+      "specialRegimes": [
+        "NBC Division B Part 9 — Housing and Small Buildings (buildings up to 3 storeys and 600 m2)"
+      ],
+      "note": "NOT an IRC adoption. Framing rules come from NBC Division B Part 9 (9.23 Wood-Frame Construction); inference engines must not assume IRC section numbers or IRC braced-wall-panel methods here. NBC 9.23.13 selects lateral bracing from Sa(0.2) and hourly wind pressure rather than braced-wall lines."
+    },
+    "CA-NL": {
+      "name": "Canada · Newfoundland and Labrador",
+      "residentialCode": "National Building Code of Canada 2020 (Division B Part 9), adopted the 2020 code cycle",
+      "ircBase": null,
+      "adoptionLevel": "province",
+      "amendmentFlavor": "Direct adoption of the national model code with minimal provincial amendment; municipalities enforce.",
+      "specialRegimes": [
+        "NBC Division B Part 9 — Housing and Small Buildings (buildings up to 3 storeys and 600 m2)",
+        "Extreme North Atlantic wind and snow exposure",
+        "Permafrost in northern Labrador"
+      ],
+      "note": "NOT an IRC adoption. Framing rules come from NBC Division B Part 9 (9.23 Wood-Frame Construction); inference engines must not assume IRC section numbers or IRC braced-wall-panel methods here. NBC 9.23.13 selects lateral bracing from Sa(0.2) and hourly wind pressure rather than braced-wall lines."
+    },
+    "CA-YT": {
+      "name": "Canada · Yukon",
+      "residentialCode": "National Building Code of Canada 2020 (Division B Part 9), adopted the 2020 code cycle",
+      "ircBase": null,
+      "adoptionLevel": "province",
+      "amendmentFlavor": "Direct adoption of the national model code with minimal provincial amendment; municipalities enforce.",
+      "specialRegimes": [
+        "NBC Division B Part 9 — Housing and Small Buildings (buildings up to 3 storeys and 600 m2)",
+        "Discontinuous permafrost — pile and space-frame foundation practice"
+      ],
+      "note": "NOT an IRC adoption. Framing rules come from NBC Division B Part 9 (9.23 Wood-Frame Construction); inference engines must not assume IRC section numbers or IRC braced-wall-panel methods here. NBC 9.23.13 selects lateral bracing from Sa(0.2) and hourly wind pressure rather than braced-wall lines."
+    },
+    "CA-NT": {
+      "name": "Canada · Northwest Territories",
+      "residentialCode": "National Building Code of Canada 2020 (Division B Part 9), adopted the 2020 code cycle",
+      "ircBase": null,
+      "adoptionLevel": "territory",
+      "amendmentFlavor": "Direct adoption of the national model code with minimal provincial amendment; municipalities enforce.",
+      "specialRegimes": [
+        "NBC Division B Part 9 — Housing and Small Buildings (buildings up to 3 storeys and 600 m2)",
+        "Permafrost — pile and space-frame foundation practice"
+      ],
+      "note": "NOT an IRC adoption. Framing rules come from NBC Division B Part 9 (9.23 Wood-Frame Construction); inference engines must not assume IRC section numbers or IRC braced-wall-panel methods here. NBC 9.23.13 selects lateral bracing from Sa(0.2) and hourly wind pressure rather than braced-wall lines."
+    },
+    "CA-NU": {
+      "name": "Canada · Nunavut",
+      "residentialCode": "National Building Code of Canada 2020 (Division B Part 9), adopted the 2020 code cycle",
+      "ircBase": null,
+      "adoptionLevel": "territory",
+      "amendmentFlavor": "Direct adoption of the national model code with minimal provincial amendment; municipalities enforce.",
+      "specialRegimes": [
+        "NBC Division B Part 9 — Housing and Small Buildings (buildings up to 3 storeys and 600 m2)",
+        "Continuous permafrost — pile and space-frame foundation practice",
+        "Extreme Arctic wind and drifting snow"
+      ],
+      "note": "NOT an IRC adoption. Framing rules come from NBC Division B Part 9 (9.23 Wood-Frame Construction); inference engines must not assume IRC section numbers or IRC braced-wall-panel methods here. NBC 9.23.13 selects lateral bracing from Sa(0.2) and hourly wind pressure rather than braced-wall lines."
+    },
+    "CA-GEN": {
+      "name": "Canada · Generic (NBC 2020)",
+      "residentialCode": "National Building Code of Canada 2020 (Division B Part 9)",
+      "ircBase": null,
+      "adoptionLevel": "national model code",
+      "amendmentFlavor": "The unamended national model code. Nine of thirteen provinces and territories adopt it essentially as written; Ontario, British Columbia, Alberta and Quebec publish their own variants.",
+      "specialRegimes": [
+        "NBC Division B Part 9 — Housing and Small Buildings (buildings up to 3 storeys and 600 m2)"
+      ],
+      "note": "NOT an IRC adoption. Framing rules come from NBC Division B Part 9 (9.23 Wood-Frame Construction); inference engines must not assume IRC section numbers or IRC braced-wall-panel methods here. NBC 9.23.13 selects lateral bracing from Sa(0.2) and hourly wind pressure rather than braced-wall lines. This is the fallback for a Canadian locale with an unknown province — pick a province where it is known. NBC 2025 was published 2025-12-22 but no province had adopted it as of 2026-08."
     }
   }
 }
